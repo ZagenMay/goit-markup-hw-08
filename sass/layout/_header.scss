@@ -1,0 +1,110 @@
+.header {
+  position: relative;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #ececec;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+}
+.header-contacts {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+}
+.header__logo {
+  margin-right: 93px;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+
+  & .menu__link::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+    cursor: pointer;
+    transform: scaleX(0);
+    opacity: 0;
+    transition: transform var(--main-duration) var(--timing-function),
+      opacity var(--main-duration) var(--timing-function);
+  }
+  & .menu__link:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  & .menu__link:focus::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+.menu__item:not(:last-child) {
+  margin-right: 50px;
+}
+.header-contacts__items:not(:last-child) {
+  margin-right: 50px;
+}
+
+.menu__link {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--main-font-color);
+  transition: color var(--main-duration) var(--timing-function);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+  &.current::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.header-contacts__link {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--descriprion-font-color);
+  transition: color var(--main-duration) var(--timing-function);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.current {
+  color: var(--accent-color);
+}
+
+.header-contacts__icon {
+  fill: var(--descriprion-font-color);
+  margin-right: 10px;
+  transition: fill var(--main-duration) var(--timing-function);
+
+  .header-contacts__link:hover &,
+  .header-contacts__link:focus & {
+    fill: var(--accent-color);
+  }
+}

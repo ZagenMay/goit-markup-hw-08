@@ -1,0 +1,22 @@
+.modal-btn {
+  font-family: var(--main-font);
+  background-color: var(--accent-color);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  padding: 10px 32px;
+  color: var(--secondary-font-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-color: transparent;
+  transition: background-color var(--main-duration) var(--timing-function);
+
+  &:hover,
+  &:focus {
+    background-color: var(--hover-hero-btn-color);
+  }
+}
