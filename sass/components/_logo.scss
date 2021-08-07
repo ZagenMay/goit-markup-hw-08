@@ -1,12 +1,13 @@
 .logo {
   font-family: var(--secondary-font);
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-
-  letter-spacing: 0.03em;
+  @include font(24px, 700, 1.16, 0.03em);
   color: var(--main-font-color);
 }
 .logo__text {
   color: var(--accent-color);
+}
+@media screen and (min-width: 1200px) {
+  .logo {
+    @include font(26px, 700, 1.19, 0.03em);
+  }
 }

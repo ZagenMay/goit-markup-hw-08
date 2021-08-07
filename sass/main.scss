@@ -2,8 +2,10 @@
 @import './utils/variables';
 @import './utils/common';
 @import './utils/container';
+@import './utils/mixins';
 // Components
 @import './components/logo';
+@import './components/current';
 @import './components/modal-btn';
 @import './components/social';
 @import './components/modal-window';

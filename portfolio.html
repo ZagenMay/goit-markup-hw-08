@@ -46,12 +46,17 @@
             </li>
           </ul>
         </nav>
+        <button class="burger-btn" data-menu-open>
+          <svg class="burger-btn__icon">
+            <use href="./images/burger.svg#burger-icon"></use>
+          </svg>
+        </button>
 
         <ul class="header-contacts list">
           <li class="header-contacts__items">
             <a class="header-contacts__link link" href="mailto:info@devstudio.com">
               <svg class="header-contacts__icon" width="16" height="12">
-                <use href="./img/sprite.svg#icon-envelope-icon"></use>
+                <use href="./images/sprite.svg#icon-envelope-icon"></use>
               </svg>
               info@devstudio.com
             </a>
@@ -59,12 +64,61 @@
           <li class="header-contacts__items">
             <a class="header-contacts__link link" href="tel:+380961111111">
               <svg class="header-contacts__icon" width="10" height="16">
-                <use href="./img/sprite.svg#icon-tel-icon"></use>
+                <use href="./images/sprite.svg#icon-tel-icon"></use>
               </svg>
               +38 096 111 11 11
             </a>
           </li>
         </ul>
+      </div>
+      <div class="mobile-menu transition" data-menu>
+        <div class="container mobile-menu__container">
+          <button type="button" class="mobile-menu__btn--close" data-menu-close>
+            <svg class="mobile-menu__icon">
+              <use href="./images/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+
+          <ul class="nav-list list">
+            <li class="nav-list__item">
+              <a class="nav-list__link link" href="./index.html">Студия</a>
+            </li>
+            <li class="nav-list__item">
+              <a class="nav-list__link link current" href="./portfolio.html">Портфолио</a>
+            </li>
+            <li class="nav-list__item">
+              <a class="nav-list__link link" href="">Контакты</a>
+            </li>
+          </ul>
+
+          <ul class="contacts-list list">
+            <li class="contacts-list__item">
+              <a class="contacts-list__link contacts-list__link-tel link" href="tel:+380961111111"
+                >+38 096 111 11 11</a
+              >
+            </li>
+            <li class="contacts-list__item">
+              <a class="contacts-list__link link" href="mailto:info@devstudio.com"
+                >info@devstudio.com</a
+              >
+            </li>
+          </ul>
+
+          <ul class="media-list list">
+            <li class="media-list__item">
+              <a class="media-list__link link" href="">Instagram</a>
+            </li>
+            <li class="media-list__item">
+              <a class="media-list__link link" href="">Twitter</a>
+            </li>
+            <li class="media-list__item">
+              <a class="media-list__link link" href="">Facebook</a>
+            </li>
+            <li class="media-list__item">
+              <a class="media-list__link link" href="">LinkedIn</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
     <!-- PORTFOLIO -->
@@ -72,6 +126,7 @@
       <section class="Portfolio section">
         <div class="container">
           <h1 class="portfolio__title--hidden hidden">Портфолио</h1>
+          <!-- BUTTONS -->
           <ul class="portfolio__list list">
             <li class="portfolio__item">
               <button class="portfolio__button" type="button">Все</button>
@@ -89,18 +144,68 @@
               <button class="portfolio__button" type="button">Маркетинг</button>
             </li>
           </ul>
+          <!-- END BUTTONS -->
           <div class="projects">
+            <!-- CARDS -->
             <ul class="projects__list list">
               <li class="projects__item">
                 <a href="" class="projects__link link">
                   <div class="projects__wrap">
-                    <img
-                      class="projects__img"
-                      src="./img/project-1.jpg"
-                      alt="Технокряк"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port1-webp-desktop.webp    1x,
+                          ./images/portfolio/port1-webp-desktop@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port1-img-desktop.jpg    1x,
+                          ./images/portfolio/port1-img-desktop@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port1-webp-tablet.webp    1x,
+                          ./images/portfolio/port1-webp-tablet@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port1-img-tablet.jpg   1x,
+                          ./images/portfolioport1-img-tablet@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port1-webp-mobile.webp    1x,
+                          ./images/portfolio/port1-webp-mobile@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port1-img-mobile.jpg    1x,
+                          ./images/portfolio/port1-img-mobile@2x.jpg 2x
+                        "
+                      />
+                      <img
+                        class="projects__img"
+                        src="./images/project-1.jpg"
+                        alt="Технокряк"
+                        width="370"
+                        height="294"
+                      />
+                    </picture>
+
                     <div class="overlay">
                       <p class="overlay__description">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -119,13 +224,61 @@
               <li class="projects__item">
                 <a href="" class="projects__link link">
                   <div class="projects__wrap">
-                    <img
-                      class="projects__img"
-                      src="./img/project-2.jpg"
-                      alt="Постер New Orlean vs Golden Star"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port2-webp-desktop.webp    1x,
+                          ./images/portfolio/port2-webp-desktop@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port2-img-desktop.jpg    1x,
+                          ./images/portfolio/port2-img-desktop@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port2-webp-tablet.webp    1x,
+                          ./images/portfolio/port2-webp-tablet@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port2-img-tablet.jpg   1x,
+                          ./images/portfolioport2-img-tablet@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port2-webp-mobile.webp    1x,
+                          ./images/portfolio/port2-webp-mobile@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port2-img-mobile.jpg    1x,
+                          ./images/portfolio/port2-img-mobile@2x.jpg 2x
+                        "
+                      />
+                      <img
+                        class="projects__img"
+                        src="./images/project-2.jpg"
+                        alt="Постер New Orlean vs Golden Star"
+                        width="370"
+                        height="294"
+                      />
+                    </picture>
+
                     <div class="overlay">
                       <p class="overlay__description">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -143,13 +296,61 @@
               <li class="projects__item">
                 <a href="" class="projects__link link">
                   <div class="projects__wrap">
-                    <img
-                      class="projects__img"
-                      src="./img/project-3.jpg"
-                      alt="Ресторан Seafood"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port3-webp-desktop.webp    1x,
+                          ./images/portfolio/port3-webp-desktop@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port3-img-desktop.jpg    1x,
+                          ./images/portfolio/port3-img-desktop@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port3-webp-tablet.webp    1x,
+                          ./images/portfolio/port3-webp-tablet@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port3-img-tablet.jpg   1x,
+                          ./images/portfolioport3-img-tablet@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port3-webp-mobile.webp    1x,
+                          ./images/portfolio/port3-webp-mobile@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port3-img-mobile.jpg    1x,
+                          ./images/portfolio/port3-img-mobile@2x.jpg 2x
+                        "
+                      />
+                      <img
+                        class="projects__img"
+                        src="./images/project-3.jpg"
+                        alt="Ресторан Seafood"
+                        width="370"
+                        height="294"
+                      />
+                    </picture>
+
                     <div class="overlay">
                       <p class="overlay__description">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -167,13 +368,61 @@
               <li class="projects__item">
                 <a href="" class="projects__link link">
                   <div class="projects__wrap">
-                    <img
-                      class="projects__img"
-                      src="./img/project-4.jpg"
-                      alt="Проект Prime"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port4-webp-desktop.webp    1x,
+                          ./images/portfolio/port4-webp-desktop@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port4-img-desktop.jpg    1x,
+                          ./images/portfolio/port4-img-desktop@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port4-webp-tablet.webp    1x,
+                          ./images/portfolio/port4-webp-tablet@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port4-img-tablet.jpg   1x,
+                          ./images/portfolioport4-img-tablet@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port4-webp-mobile.webp    1x,
+                          ./images/portfolio/port4-webp-mobile@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port4-img-mobile.jpg    1x,
+                          ./images/portfolio/port4-img-mobile@2x.jpg 2x
+                        "
+                      />
+                      <img
+                        class="projects__img"
+                        src="./images/project-4.jpg"
+                        alt="Проект Prime"
+                        width="370"
+                        height="294"
+                      />
+                    </picture>
+
                     <div class="overlay">
                       <p class="overlay__description">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -191,13 +440,61 @@
               <li class="projects__item">
                 <a href="" class="projects__link link">
                   <div class="projects__wrap">
-                    <img
-                      class="projects__img"
-                      src="./img/project-5.jpg"
-                      alt="Проект Boxes"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port5-webp-desktop.webp    1x,
+                          ./images/portfolio/port5-webp-desktop@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port5-img-desktop.jpg    1x,
+                          ./images/portfolio/port5-img-desktop@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port5-webp-tablet.webp    1x,
+                          ./images/portfolio/port5-webp-tablet@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port5-img-tablet.jpg   1x,
+                          ./images/portfolioport5-img-tablet@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port5-webp-mobile.webp    1x,
+                          ./images/portfolio/port5-webp-mobile@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port5-img-mobile.jpg    1x,
+                          ./images/portfolio/port5-img-mobile@2x.jpg 2x
+                        "
+                      />
+                      <img
+                        class="projects__img"
+                        src="./images/project-5.jpg"
+                        alt="Проект Boxes"
+                        width="370"
+                        height="294"
+                      />
+                    </picture>
+
                     <div class="overlay">
                       <p class="overlay__description">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -215,13 +512,61 @@
               <li class="projects__item">
                 <a href="" class="projects__link link">
                   <div class="projects__wrap">
-                    <img
-                      class="projects__img"
-                      src="./img/project-6.jpg"
-                      alt="Inspiration has no Borders"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port6-webp-desktop.webp    1x,
+                          ./images/portfolio/port6-webp-desktop@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port6-img-desktop.jpg    1x,
+                          ./images/portfolio/port6-img-desktop@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port6-webp-tablet.webp    1x,
+                          ./images/portfolio/port6-webp-tablet@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port6-img-tablet.jpg   1x,
+                          ./images/portfolioport6-img-tablet@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port6-webp-mobile.webp    1x,
+                          ./images/portfolio/port6-webp-mobile@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port6-img-mobile.jpg    1x,
+                          ./images/portfolio/port6-img-mobile@2x.jpg 2x
+                        "
+                      />
+                      <img
+                        class="projects__img"
+                        src="./images/project-6.jpg"
+                        alt="Inspiration has no Borders"
+                        width="370"
+                        height="294"
+                      />
+                    </picture>
+
                     <div class="overlay">
                       <p class="overlay__description">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -239,13 +584,61 @@
               <li class="projects__item">
                 <a href="" class="projects__link link">
                   <div class="projects__wrap">
-                    <img
-                      class="projects__img"
-                      src="./img/project-7.jpg"
-                      alt="Издание Limited Edition"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port7-webp-desktop.webp    1x,
+                          ./images/portfolio/port7-webp-desktop@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port7-img-desktop.jpg    1x,
+                          ./images/portfolio/port7-img-desktop@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port7-webp-tablet.webp    1x,
+                          ./images/portfolio/port7-webp-tablet@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port7-img-tablet.jpg   1x,
+                          ./images/portfolioport7-img-tablet@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port7-webp-mobile.webp    1x,
+                          ./images/portfolio/port7-webp-mobile@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port7-img-mobile.jpg    1x,
+                          ./images/portfolio/port7-img-mobile@2x.jpg 2x
+                        "
+                      />
+                      <img
+                        class="projects__img"
+                        src="./images/project-7.jpg"
+                        alt="Издание Limited Edition"
+                        width="370"
+                        height="294"
+                      />
+                    </picture>
+
                     <div class="overlay">
                       <p class="overlay__description">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -263,13 +656,61 @@
               <li class="projects__item">
                 <a href="" class="projects__link link">
                   <div class="projects__wrap">
-                    <img
-                      class="projects__img"
-                      src="./img/project-8.jpg"
-                      alt="Проект LAB"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port8-webp-desktop.webp    1x,
+                          ./images/portfolio/port8-webp-desktop@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port8-img-desktop.jpg    1x,
+                          ./images/portfolio/port8-img-desktop@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port8-webp-tablet.webp    1x,
+                          ./images/portfolio/port8-webp-tablet@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port8-img-tablet.jpg   1x,
+                          ./images/portfolioport8-img-tablet@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port8-webp-mobile.webp    1x,
+                          ./images/portfolio/port8-webp-mobile@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port8-img-mobile.jpg    1x,
+                          ./images/portfolio/port8-img-mobile@2x.jpg 2x
+                        "
+                      />
+                      <img
+                        class="projects__img"
+                        src="./images/project-8.jpg"
+                        alt="Проект LAB"
+                        width="370"
+                        height="294"
+                      />
+                    </picture>
+
                     <div class="overlay">
                       <p class="overlay__description">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -287,13 +728,61 @@
               <li class="projects__item">
                 <a href="" class="projects__link link">
                   <div class="projects__wrap">
-                    <img
-                      class="projects__img"
-                      src="./img/project-9.jpg"
-                      alt="Growing Business"
-                      width="370"
-                      height="294"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port9-webp-desktop.webp    1x,
+                          ./images/portfolio/port9-webp-desktop@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcset="
+                          ./images/portfolio/port9-img-desktop.jpg    1x,
+                          ./images/portfolio/port9-img-desktop@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port9-webp-tablet.webp    1x,
+                          ./images/portfolio/port9-webp-tablet@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="
+                          ./images/portfolio/port9-img-tablet.jpg   1x,
+                          ./images/portfolioport9-img-tablet@2x.jpg 2x
+                        "
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port9-webp-mobile.webp    1x,
+                          ./images/portfolio/port9-webp-mobile@2x.webp 2x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 320px)"
+                        srcset="
+                          ./images/portfolio/port9-img-mobile.jpg    1x,
+                          ./images/portfolio/port9-img-mobile@2x.jpg 2x
+                        "
+                      />
+                      <img
+                        class="projects__img"
+                        src="./images/project-9.jpg"
+                        alt="Growing Business"
+                        width="370"
+                        height="294"
+                      />
+                    </picture>
+
                     <div class="overlay">
                       <p class="overlay__description">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -309,6 +798,7 @@
                 </a>
               </li>
             </ul>
+            <!-- END CARDS -->
           </div>
         </div>
       </section>
@@ -316,63 +806,66 @@
     <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer__wrap">
-        <div class="footer__box--left">
-          <a class="logo footer__logo link" lang="en" href="./index.html">
-            <span class="logo__text">Web</span>Studio
-          </a>
-          <address class="footer__contacts">
-            <ul class="footer__list list">
-              <li class="footer__items">
-                <a
-                  class="footer__address link"
-                  href="https://goo.gl/maps/xRziThTajR1GdXdM6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >г. Киев, пр-т Леси Украинки, 26
+        <div class="footer__box">
+          <div class="footer__box--left">
+            <a class="logo footer__logo link" lang="en" href="./index.html">
+              <span class="logo__text">Web</span>Studio
+            </a>
+            <address class="footer__contacts">
+              <ul class="footer__list list">
+                <li class="footer__items">
+                  <a
+                    class="footer__address link"
+                    href="https://goo.gl/maps/xRziThTajR1GdXdM6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >г. Киев, пр-т Леси Украинки, 26
+                  </a>
+                </li>
+                <li class="footer__items">
+                  <a class="footer__links link" href="mailto:info@example.com">info@example.com</a>
+                </li>
+                <li class="footer__items">
+                  <a class="footer__links link" href="tel:+380991111111">+38 099 111 11 11</a>
+                </li>
+              </ul>
+            </address>
+          </div>
+          <div class="footer__box--right">
+            <h3 class="footer__title">присоединяйтесь</h3>
+            <ul class="social footer--social">
+              <li class="social__item list">
+                <a href="" class="social__link footer--icon link">
+                  <svg class="social__icons" width="20" height="20">
+                    <use href="./images/sprite.svg#icon-instagram"></use>
+                  </svg>
                 </a>
               </li>
-              <li class="footer__items">
-                <a class="footer__links link" href="mailto:info@example.com">info@example.com</a>
+              <li class="social__item list">
+                <a href="" class="social__link footer--icon link">
+                  <svg class="social__icons" width="20" height="20">
+                    <use href="./images/sprite.svg#icon-twitter"></use>
+                  </svg>
+                </a>
               </li>
-              <li class="footer__items">
-                <a class="footer__links link" href="tel:+380991111111">+38 099 111 11 11</a>
+              <li class="social__item list">
+                <a href="" class="social__link footer--icon link">
+                  <svg class="social__icons" width="20" height="20">
+                    <use href="./images/sprite.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item list">
+                <a href="" class="social__link footer--icon link">
+                  <svg class="social__icons" width="20" height="20">
+                    <use href="./images/sprite.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
               </li>
             </ul>
-          </address>
+          </div>
         </div>
-        <div class="footer__box--right">
-          <h3 class="footer__title">присоединяйтесь</h3>
-          <ul class="social">
-            <li class="social__item list">
-              <a href="" class="social__link footer--icon link">
-                <svg class="social__icons" width="20" height="20">
-                  <use href="./img/sprite.svg#icon-instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social__item list">
-              <a href="" class="social__link footer--icon link">
-                <svg class="social__icons" width="20" height="20">
-                  <use href="./img/sprite.svg#icon-twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social__item list">
-              <a href="" class="social__link footer--icon link">
-                <svg class="social__icons" width="20" height="20">
-                  <use href="./img/sprite.svg#icon-facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social__item list">
-              <a href="" class="social__link footer--icon link">
-                <svg class="social__icons" width="20" height="20">
-                  <use href="./img/sprite.svg#icon-linkedin"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
+
         <div class="subscibe">
           <h3 class="subscribe__title">Подпишитесь на рассылку</h3>
           <form>
@@ -384,7 +877,7 @@
               <button type="submit" class="modal-btn footer--btn">
                 Подписаться
                 <svg class="subscribe__icon" width="24px" height="24px">
-                  <use href="./img/sprite.svg#icon-send"></use>
+                  <use href="./images/sprite.svg#icon-send"></use>
                 </svg>
               </button>
             </div>
@@ -392,5 +885,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/menu.js"></script>
   </body>
 </html>

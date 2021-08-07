@@ -18,13 +18,12 @@
   transform: scale(1.1) translate(-50%, -50%);
 }
 .modal {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   padding: 40px 40px;
   transform: translate(-50%, -50%) scale(1);
-  width: 528px;
-  height: 581px;
+  max-height: 609px;
   background-color: var(--secondary-font-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -54,10 +53,18 @@
 
 .modal__description {
   margin-bottom: 12px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.15;
+  @include font(20px, 700, 1.15, 0.03em);
   text-align: center;
-  letter-spacing: 0.03em;
   color: var(--main-font-color);
+}
+@media screen and (max-width: 1199px) {
+  .modal {
+    max-width: 450px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+  }
 }
