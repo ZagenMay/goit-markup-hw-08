@@ -1,6 +1,12 @@
 body {
   color: var(--main-font-color);
   font-family: var(--main-font);
+  &.no-scroll {
+    overflow: hidden;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 77px 0 0 0;
+  }
 }
 .link {
   text-decoration: none;

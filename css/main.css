@@ -14,9 +14,23 @@
   --main-duration: 250ms;
 }
 
+html.no-scroll {
+  overflow: hidden;
+}
+
 body {
   color: var(--main-font-color);
   font-family: var(--main-font);
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 77px 0 0 0;
+  }
 }
 
 .link {
@@ -205,6 +219,7 @@ img {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
+  z-index: 10;
   transition: opacity var(--main-duration) var(--timing-function), visibility var(--main-duration) var(--timing-function);
 }
 
@@ -439,6 +454,17 @@ img {
   padding-top: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid #ececec;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 4;
+    background-color: #fff;
+  }
 }
 
 .header-container {
