@@ -15,7 +15,7 @@
 }
 
 html.no-scroll {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 }
 
 body.no-scroll {
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 @media screen and (max-width: 768px) {
@@ -553,6 +553,7 @@ img {
   padding-top: 48px;
   padding-bottom: 48px;
   padding-left: 40px;
+  height: -webkit-fill-available;
 }
 
 .nav-list {
