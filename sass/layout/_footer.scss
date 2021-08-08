@@ -44,6 +44,7 @@
 .footer__title {
   @include font(14px, 700, 1.14, 0.03em);
   text-transform: uppercase;
+  text-align: center;
   color: var(--secondary-font-color);
   margin-bottom: 20px;
 }
@@ -130,6 +131,9 @@
   }
 }
 @media screen and (min-width: 1200px) {
+  .footer__box {
+    margin-bottom: 0;
+  }
   .footer__wrap {
     display: flex;
     align-items: baseline;
@@ -153,5 +157,8 @@
   }
   .subscribe__box {
     margin: 0;
+  }
+  .footer__title {
+    text-align: left;
   }
 }

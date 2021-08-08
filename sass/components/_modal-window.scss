@@ -43,7 +43,9 @@
   border-radius: 50%;
   cursor: pointer;
   background-color: var(--secondary-font-color);
-  transition: fill var(--main-duration) var(--timing-function);
+  @media screen and (min-width: 1200px) {
+    transition: fill var(--main-duration) var(--timing-function);
+  }
 
   &:hover,
   &:focus {
