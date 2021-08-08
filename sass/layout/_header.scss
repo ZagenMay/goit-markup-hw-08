@@ -95,8 +95,8 @@
     margin-bottom: 32px;
   }
 
-  &__link:hover,
-  &__link:focus {
+  &:hover,
+  &:focus {
     color: var(--accent-color);
   }
 }

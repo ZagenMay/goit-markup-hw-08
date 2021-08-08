@@ -544,7 +544,7 @@ img {
   margin-bottom: 32px;
 }
 
-.nav-list__item__link:hover, .nav-list__item__link:focus {
+.nav-list__item:hover, .nav-list__item:focus {
   color: var(--accent-color);
 }
 
