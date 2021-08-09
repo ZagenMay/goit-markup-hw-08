@@ -15,7 +15,7 @@
 }
 
 html.no-scroll {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 }
 
 body.no-scroll {
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 768px) {
