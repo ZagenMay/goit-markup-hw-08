@@ -219,7 +219,7 @@ img {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  z-index: 10;
+  z-index: 100;
   transition: opacity var(--main-duration) var(--timing-function), visibility var(--main-duration) var(--timing-function);
 }
 
@@ -239,11 +239,17 @@ img {
   left: 50%;
   padding: 40px 40px;
   transform: translate(-50%, -50%) scale(1);
-  max-height: 609px;
+  max-height: 100%;
   background-color: var(--secondary-font-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: var(--main-duration) var(--timing-function);
+}
+
+@media screen and (orientation: landscape) and (max-width: 768px) {
+  .modal {
+    overflow: auto;
+  }
 }
 
 .backdrop__button--close {
@@ -557,7 +563,7 @@ img {
 }
 
 .nav-list {
-  margin-bottom: auto;
+  margin-bottom: 64px;
 }
 
 .nav-list__item {
