@@ -557,7 +557,7 @@ img {
 }
 
 .nav-list {
-  margin-bottom: 80px;
+  margin-bottom: auto;
 }
 
 .nav-list__item {
